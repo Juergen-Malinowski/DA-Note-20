@@ -13,6 +13,7 @@ import { NoteComponent } from './note/note.component';
     templateUrl: './note-list.component.html',
     styleUrl: './note-list.component.scss'
 })
+
 export class NoteListComponent {
   noteList: Note[] = [];
   favFilter: "all" | "fav" = "all";
