@@ -77,7 +77,7 @@
         </div>
         <div>
             <button (click)="changeTrashStatus()" class="white_btn_round "
-                [ngClass]="{'back_arrow_active': status == 'trash', 'back_arrow_inactive': status != 'trash'}">
+                [ngClass]="{'back_arrow_active': status == 'trash', 'back_arrow_inactive': status != 'trash'}" aria-label="Change Trash Status">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g id="arrow_back">
                         <mask id="mask0_103_413" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
@@ -125,14 +125,14 @@
                     </g>
                 </svg>
                 }
-
-
-
                 <p>Trash</p>
             </button>
         </div>
     </div>
+
+
     <div>
+        <app-note *ngFor="let note of getList()" [note]="note"  ></app-note>
 
         <!-- <ul>
             @for (item of (this.noteService.items$ | async); track item) {
@@ -142,10 +142,9 @@
             }
         </ul> -->
 
-        @for (note of noteList; track note) {
-            <app-note [note]="note"></app-note>
-          }
-
+        <!-- @for (note of noteList; track note) {
+        <app-note [note]="note"></app-note>
+        } -->
 
     </div>
 </div>
